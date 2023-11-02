@@ -10,16 +10,18 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region  = "us-east-1"
   profile = "teste01"
 }
 
 resource "aws_s3_bucket" "example" {
-  bucket = "my-tf-test-bucket-21651465161321621-rubens"
+  bucket = "my-tf-test-bucket-rubens"
 
   tags = {
     Name        = "My bucket"
     Environment = "Dev"
-    Manageby = "Terraform"
+    Manageby    = "Terraform"
+    Owner       = "Rubens Rabelo"
+    UpdateAt    = "2023-11-02"
   }
 }
